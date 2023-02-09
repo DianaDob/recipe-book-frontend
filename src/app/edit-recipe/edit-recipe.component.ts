@@ -30,8 +30,8 @@ export class EditRecipeComponent implements OnInit {
   }
 
   onSubmitEditedRecipe(editedRecipe:Receipe){
-    editedRecipe.ingredients = this.recipe.ingredients;
-    editedRecipe.receipeId = this.recipe.receipeId;
+    editedRecipe.ingredients = this.recipeToEdit.ingredients;
+    editedRecipe.receipeId = this.recipeToEdit.receipeId;
     this.recipeService.updateRecipe(editedRecipe).subscribe(() => {
       this.router.navigate(['/receipes']);
     });
