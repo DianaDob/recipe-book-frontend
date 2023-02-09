@@ -1,5 +1,10 @@
+<div style="margin-left:auto;margin-bottom:10px">
+		<input type="search" #searchField placeholder="Type in keyword..." style="margin-right:10px">
+		<button class="btn btn-warning" (click)="filterRecipes()">Search</button>
+</div>
+
 <div class="card-deck w-100">
-    <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch" *ngFor="let receipe of receipes">
+    <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch" *ngFor="let receipe of filteredRecipes">
         
             <div class="card bg-warning p-3 mb-5" style="min-height:300px;max-height:300px;">
                 <h3 class="card-title">{{ receipe.name }}</h3>
