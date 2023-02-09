@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url(./assets/vintage-old-rustic-cutlery-dark.jpg);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+#addRecipeForm {
+    color:white;
+}
+
+
+
+li {
+    margin-bottom: 10px;
+}
+
+.button-row {
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+
+
+

@@ -1,0 +1,27 @@
+<div class="card bg-warning p-4" *ngIf="recipe">
+
+    <div *ngIf="!addMode">
+        
+            <div class="row">
+                <div class="col">
+                    <h2 class="card-title">{{ recipe.receipeId }} {{ recipe.name }}</h2>
+                </div>
+                <div class="col">
+                    <button (click)="toggleAddMode(true)" class="btn btn-dark" style="float:right">Edit recipe</button>
+                </div> 
+            </div>
+                                   
+        
+        <h4>Ingredients</h4>
+        <ul>
+            <li *ngFor="let ingred of recipe.ingredients">{{ ingred.quantity }} {{ ingred.name }}</li>
+        </ul>
+        <h4>Preparation</h4>
+        <p>{{ recipe.preparation }}</p>
+        <fa-icon [icon]="faTrashCan" (click)="deleteRecipe(recipe.receipeId)"></fa-icon>
+
+    </div>
+    
+    <app-edit-recipe *ngIf="addMode" [recipe]="recipe" (editRecipeEvent)="toggleAddMode($event)"></app-edit-recipe>
+    
+</div>

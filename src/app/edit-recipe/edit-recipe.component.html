@@ -1,0 +1,39 @@
+
+<form #editRecipeForm="ngForm" (ngSubmit)="onSubmitEditedRecipe(editRecipeForm.value)">
+    <div class="form-group">
+        <label for="name">Recipe name:</label>
+        <input type="text" name="name" class="form-control" [(ngModel)]="recipeToEdit.name" required/>
+    </div>
+    <div class="form-group">
+        <label>Ingredients:</label>
+        <ul>
+            <li *ngFor="let ingredient of recipeToEdit.ingredients">{{ingredient.quantity}} {{ingredient.name}}
+                <button type="button" class="btn btn-dark" (click)="onDelete(ingredient, recipeToEdit.ingredients)">-</button>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col">
+                <label for="quantity">Quantity:</label>
+                <input type="text" #quantity name="quantity"/>
+            </div>
+
+            <div class="col">
+                <label for="ingredient">Ingredient:</label>
+                <input type="text" #ingredName name="ingredient"/>
+            </div>
+            <div class="col mt-auto">
+                <button type="button" class="btn btn-dark" (click)="onIngredientAddition(quantity.value, ingredName.value, recipeToEdit.ingredients)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="preparation">Preparation:</label>
+        <textarea type="text" name="preparation" class="form-control" [(ngModel)]="recipeToEdit.preparation" required></textarea>
+    </div>
+    <div class="row button-row">
+        <button type="submit" class="btn btn-dark" [disabled]="recipeToEdit.ingredients.length === 0 || editRecipeForm.invalid">Save</button>
+        <button class="btn btn-dark" (click)="cancelEdit()" style="margin-left:10px">Cancel</button>
+    </div>
+    <em [hidden]="this.recipeToEdit.ingredients.length !== 0 && editRecipeForm.valid">To submit your recipe, all fields must be filled out!</em>
+</form>
+

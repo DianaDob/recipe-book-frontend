@@ -2,17 +2,34 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { ReceipeListComponent } from './receipe-list/receipe-list.component';
+import { ReceipeService } from './service/receipe-service.service';
+import { AddRecipeComponent } from './add-recipe/add-recipe.component';
+import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReceipeListComponent,
+    AddRecipeComponent,
+    RecipeDetailComponent,
+    EditRecipeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [ReceipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

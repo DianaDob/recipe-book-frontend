@@ -1,0 +1,16 @@
+.ingred{
+    display:flex;
+    gap:10px;
+}
+
+.quantity{
+    flex-grow: 1;
+    /* border: 1px solid #ced4da; */
+    /* border-radius: 0.25rem; */
+}
+
+.ingredient{
+    flex-grow: 6;
+    /* border: 1px solid #ced4da; */
+    /* border-radius: 0.25rem; */
+}

@@ -1,0 +1,13 @@
+
+.recipe {
+    display: flex;
+    height: 400px;
+    width: 100px;
+    flex: 0 0 30%;
+}
+
+
+.a:hover {
+    text-decoration: none;
+    color: white;
+}
