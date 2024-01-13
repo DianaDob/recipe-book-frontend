@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Receipe } from '../model/receipe';
+import { Receipe, ReceipeWithIngredsDTO } from '../model/receipe';
 import { Observable } from 'rxjs';
 
 
@@ -17,20 +17,20 @@ export class ReceipeService {
     this.updateReceipeUrl = 'http://localhost:8080/update/receipe';
   }
 
-  public findAll(): Observable<Receipe[]> {
-    return this.http.get<Receipe[]>(this.receipesUrl);
+  public findAll(): Observable<ReceipeWithIngredsDTO[]> {
+    return this.http.get<ReceipeWithIngredsDTO[]>(this.receipesUrl);
   }
 
-  public getRecipe(id: number): Observable<Receipe> {
+  public getRecipe(id: number): Observable<ReceipeWithIngredsDTO> {
     /* let params = new HttpParams();
     params = params.append('name', name); */
     let getReceipeUrl = `http://localhost:8080/receipe/${id}`;
-    return this.http.get<Receipe>(getReceipeUrl);
+    return this.http.get<ReceipeWithIngredsDTO>(getReceipeUrl);
   }
 
 
-  public save(receipe: Receipe): Observable<Receipe> {
-    return this.http.post<Receipe>(this.addReceipeUrl, receipe);
+  public save(receipe: ReceipeWithIngredsDTO): Observable<ReceipeWithIngredsDTO> {
+    return this.http.post<ReceipeWithIngredsDTO>(this.addReceipeUrl, receipe);
   }
 
   public deleteRecipe(id: number): Observable<Receipe> {

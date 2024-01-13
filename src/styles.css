@@ -5,6 +5,7 @@ body {
     background-position:center;
     background-repeat: no-repeat;
     min-height: 100vh;
+    /* cursor: url(./assets/pencil-solid.svg), auto; */
 }
 
 #addRecipeForm {
@@ -20,6 +21,10 @@ li {
 .button-row {
     margin-left: auto;
     margin-bottom: 10px;
+}
+
+label {
+    padding-right:10px;
 }
 
 

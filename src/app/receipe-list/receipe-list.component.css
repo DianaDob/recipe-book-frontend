@@ -11,3 +11,10 @@
     text-decoration: none;
     color: white;
 }
+
+.card-title{
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}

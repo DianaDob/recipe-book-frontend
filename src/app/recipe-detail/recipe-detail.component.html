@@ -7,7 +7,8 @@
                     <h2 class="card-title">{{ recipe.receipeId }} {{ recipe.name }}</h2>
                 </div>
                 <div class="col">
-                    <button (click)="toggleAddMode(true)" class="btn btn-dark" style="float:right">Edit recipe</button>
+                    <button mat-button (click)="toggleAddMode(true)" class="btn btn-dark" style="float:right">Edit recipe</button>
+                    
                 </div> 
             </div>
                                    
@@ -23,5 +24,4 @@
     </div>
     
     <app-edit-recipe *ngIf="addMode" [recipe]="recipe" (editRecipeEvent)="toggleAddMode($event)"></app-edit-recipe>
-    
 </div>

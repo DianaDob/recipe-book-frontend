@@ -11,7 +11,8 @@ import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './common/navbar/navbar.component';
+import { ConfirmDialogComponent } from './common/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +21,15 @@ import { NavbarComponent } from './navbar/navbar.component';
     AddRecipeComponent,
     RecipeDetailComponent,
     EditRecipeComponent,
-    NavbarComponent
+    NavbarComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   providers: [ReceipeService],
   bootstrap: [AppComponent]

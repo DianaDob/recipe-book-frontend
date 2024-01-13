@@ -8,8 +8,8 @@ export class IngredientService {
 
   constructor() { }
 
-  onIngredientAddition(q: string, n: string, ingredients:Ingredient[]){
-    ingredients.push({quantity:q, name:n});
+  onIngredientAddition(q: string, n: string, receipeId: number|null, ingredients:Ingredient[]){
+    ingredients.push({quantity:q, name:n, receipeId:receipeId});
     return ingredients
   }
 

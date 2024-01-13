@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Receipe } from '../model/receipe';
+import { Receipe, ReceipeWithIngredsDTO } from '../model/receipe';
 import { ReceipeService } from '../service/receipe-service.service';
 import { Router } from '@angular/router';
 import { Ingredient } from '../model/ingredient';
@@ -22,15 +22,15 @@ export class AddRecipeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onRecipeSubmit(recipe: Receipe){
+  onRecipeSubmit(recipe: ReceipeWithIngredsDTO){
     recipe.ingredients = this.ingredients;
     console.log(recipe);
     this.receipeService.save(recipe).subscribe(() => {this.router.navigate(['/receipes'])});
 
   }
 
-  onIngredientAddition(q: string, n: string, ingredients:Ingredient[]){
-    this. ingredients = this.ingredientService.onIngredientAddition(q, n, ingredients);
+  onIngredientAddition(q: string, n: string, receipeId:number|null, ingredients:Ingredient[]){
+    this. ingredients = this.ingredientService.onIngredientAddition(q, n, receipeId, ingredients);
   }
 
   onDelete(ingredient: Ingredient, ingredients:Ingredient[]) {

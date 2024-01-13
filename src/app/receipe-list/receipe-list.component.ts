@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Receipe } from '../model/receipe';
+import { Receipe, ReceipeWithIngredsDTO } from '../model/receipe';
 import { Ingredient } from '../model/ingredient';
 import { ReceipeService } from '../service/receipe-service.service';
 
@@ -12,14 +12,15 @@ import { ReceipeService } from '../service/receipe-service.service';
 })
 export class ReceipeListComponent implements OnInit{
 
-  receipes: Receipe[];
-  filteredRecipes: Receipe[];
+  receipes: ReceipeWithIngredsDTO[];
+  filteredRecipes: ReceipeWithIngredsDTO[];
   @ViewChild('searchField') searchFieldContainer:ElementRef 
   
   constructor(private receipeService: ReceipeService) { }
 
   ngOnInit(): void {
     this.receipeService.findAll().subscribe(data => {
+      console.log('ingreds: ', data[0].ingredients[0].ingredId);
       this.receipes = data; 
       this.filteredRecipes = structuredClone(this.receipes);
       console.log(this.receipes);});
