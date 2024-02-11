@@ -13,6 +13,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { ConfirmDialogComponent } from './common/confirm-dialog/confirm-dialog.component';
+import { MatDialogModule,MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { ConfirmDialogComponent } from './common/confirm-dialog/confirm-dialog.c
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [ReceipeService],
   bootstrap: [AppComponent]

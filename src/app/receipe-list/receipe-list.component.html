@@ -6,20 +6,20 @@
 <div class="card-deck w-100">
     <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch" *ngFor="let receipe of filteredRecipes">
         
-            <div class="card bg-warning p-3 mb-5" style="min-height:300px;max-height:300px;">
+            <div class="card bg-warning p-3 mb-5" style="min-height:400px;max-height:400px;">
                 <h3 class="card-title">{{ receipe.name }}</h3>
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                     <ul class="card-text">
                         <li *ngFor="let ingred of receipe.ingredients.slice(0,4)">
                             {{ ingred.quantity }} {{ ingred.name }}</li>
                         <li *ngIf="receipe.ingredients.length > 4">...</li>
                     </ul>
                     
-                        
+                    <div class="text-center mt-auto">
+                        <a routerLink="/receipe/{{receipe.receipeId}}" class="btn btn-dark">Jump to recipe</a>
+                    </div>   
                 </div>     
-                <div class="text-center">
-                    <a routerLink="/receipe/{{receipe.receipeId}}" class="btn btn-dark">Jump to recipe</a>
-                </div>     
+                  
             </div>
               
     <div>

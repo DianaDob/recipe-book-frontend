@@ -35,10 +35,12 @@ export class RecipeDetailComponent implements OnInit {
 
   deleteRecipe(id:number){
     const dialogRef = this.dialog.open(ConfirmDialogComponent);
-    //this.dialog.nativeElement.showModal();
-    /*this.recipeService.deleteRecipe(id).subscribe(() => {
-      this.router.navigate(['/receipes']);
-    });*/
+    dialogRef.afterClosed().subscribe(result => {if(result){
+      this.recipeService.deleteRecipe(id).subscribe(() => {
+        this.router.navigate(['/receipes']);
+      });
+    }})
+    
   }
 
   toggleAddMode(inAddMode:boolean){
