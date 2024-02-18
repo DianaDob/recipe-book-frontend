@@ -9,11 +9,26 @@ body {
     background-position:center;
     background-repeat: no-repeat;
     min-height: 100vh;
+    backdrop-filter: blur(7px);
     /* cursor: url(./assets/pencil-solid.svg), auto; */
+}
+
+nav{
+    background-image: url(./assets/tropical-fruits-background-with-copyspace-with-fruits-leaf-copyspace.jpg);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
 }
 
 #addRecipeForm {
     color:white;
+}
+
+.card-title{
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
 }
 
 
