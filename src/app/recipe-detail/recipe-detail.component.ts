@@ -34,7 +34,9 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   deleteRecipe(id:number){
-    const dialogRef = this.dialog.open(ConfirmDialogComponent);
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      panelClass: 'confirm-delete'
+    });
     dialogRef.afterClosed().subscribe(result => {if(result){
       this.recipeService.deleteRecipe(id).subscribe(() => {
         this.router.navigate(['/receipes']);

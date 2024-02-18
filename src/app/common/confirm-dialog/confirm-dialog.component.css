@@ -1,0 +1,12 @@
+h2 {
+    color:antiquewhite !important;
+    background-color: #343a40;
+}
+
+.mdc-dialog__title+.mdc-dialog__content{
+    margin-top: 15px;
+}
+
+button {
+    width:80px;
+}
